@@ -1,0 +1,125 @@
+@import "~bootstrap/scss/functions";
+
+$font-family-sans-serif: "IBM Plex Sans", -apple-system, system-ui,
+  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$gray: (
+  "gray-100": #f8f9fa,
+  "gray-200": #f1f3f5,
+  "gray-300": #e9ecef,
+  "gray-400": #dee2e6,
+  "gray-500": #ced4da,
+  "gray-600": #adb5bd,
+  "gray-700": #868e96,
+  "gray-800": #495057,
+  "gray-900": #343a40,
+  "dark": #212529,
+);
+$secondary: map-get($gray, "gray-200");
+
+$body-color: map-get($gray, "dark");
+
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+$font-sizes: (
+  11: 0.6875rem,
+  12: 0.75rem,
+  13: 0.8125rem,
+  14: 0.875rem,
+  15: 0.9375rem,
+  16: 1rem,
+  17: 1.0625rem,
+  19: 1.1875rem,
+  22: 1.375rem,
+  24: 1.5rem,
+  36: 2.25rem,
+);
+
+$font-weights: (
+  "thin": 100,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "black": 900,
+);
+
+$custom-shadows: (
+  1: 0rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.12),
+);
+
+@debug map-get($map: $utilities, $key: "font-weight");
+$utilities: map-merge-multiple(
+  $utilities,
+  (
+    "width":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "font-size"), "values"),
+              $font-sizes
+            ),
+          responsive: true,
+        )
+      ),
+  ),
+  (
+    "color":
+      map-merge(
+        map-get($utilities, "color"),
+        (
+          values:
+            map-merge(map-get(map-get($utilities, "color"), "values"), ($gray)),
+        )
+      ),
+  ),
+  (
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "background-color"), "values"),
+              ($gray)
+            ),
+        )
+      ),
+  ),
+  (
+    "shadow":
+      map-merge(
+        map-get($utilities, "shadow"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "shadow"), "values"),
+              ($custom-shadows)
+            ),
+        )
+      ),
+  ),
+  (
+    "font-weight":
+      map-merge(
+        map-get($utilities, "font-weight"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "font-weight"), "values"),
+              ($font-weights)
+            ),
+        )
+      ),
+  )
+);
+
+$dropdown-min-width: 1rem;
+
+@import "~bootstrap/scss/bootstrap";

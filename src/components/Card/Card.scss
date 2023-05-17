@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.card-cover-img {
+  height: 120px;
+  object-fit: cover;
+}
+@include media-breakpoint-up(md) {
+  .card-cover-img {
+    height: 220px;
+  }
+}
+.avatar {
+  width: 37px;
+  height: 37px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}

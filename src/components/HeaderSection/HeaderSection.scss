@@ -1,0 +1,26 @@
+.cover {
+  min-height: 36vh;
+  max-height: 42vh;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../../assets/cover.png);
+  background-size: cover;
+  background-position: center;
+
+  .bg-veil {
+    content: "";
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .img {
+    min-height: 100%;
+  }
+}
