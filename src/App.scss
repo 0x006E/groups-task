@@ -15,6 +15,12 @@ $gray: (
   "gray-900": #343a40,
   "dark": #212529,
 );
+
+$all-colors: (
+  "green": #02b875,
+  "orange": #e56135,
+);
+
 $secondary: map-get($gray, "gray-200");
 
 $body-color: map-get($gray, "dark");
@@ -75,7 +81,10 @@ $utilities: map-merge-multiple(
         map-get($utilities, "color"),
         (
           values:
-            map-merge(map-get(map-get($utilities, "color"), "values"), ($gray)),
+            map-merge(
+              map-get(map-get($utilities, "color"), "values"),
+              map-merge($gray, $all-colors)
+            ),
         )
       ),
   ),
@@ -87,7 +96,7 @@ $utilities: map-merge-multiple(
           values:
             map-merge(
               map-get(map-get($utilities, "background-color"), "values"),
-              ($gray)
+              map-merge($gray, $all-colors)
             ),
         )
       ),
@@ -117,9 +126,46 @@ $utilities: map-merge-multiple(
             ),
         )
       ),
+  ),
+  (
+    "border-color":
+      map-merge(
+        map-get($utilities, "border-color"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "border-color"), "values"),
+              ($gray)
+            ),
+        )
+      ),
+  ),
+  (
+    "rounded":
+      map-merge(
+        map-get($utilities, "rounded"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "rounded"), "values"),
+              (
+                "8": 0.5rem,
+              )
+            ),
+        )
+      ),
   )
 );
 
 $dropdown-min-width: 1rem;
 
 @import "~bootstrap/scss/bootstrap";
+
+.fab {
+  aspect-ratio: 1;
+  bottom: 1.1em;
+  right: 1.1em;
+  z-index: 1030;
+  background: linear-gradient(180deg, #ff5c5c 0%, #f0568a 100%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18), 0px 0px 2px rgba(0, 0, 0, 0.08);
+}

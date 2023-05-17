@@ -1,4 +1,4 @@
-import { ReactComponent as ShareFill } from "../../assets/icons/share-fill.svg";
+import { ReactComponent as ShareFill } from "../../../assets/icons/share-fill.svg";
 import "./CardFooter.scss";
 
 function CardFooter() {
