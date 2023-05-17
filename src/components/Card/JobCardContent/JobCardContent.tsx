@@ -12,15 +12,15 @@ function JobCardContent(props: JobCardContentProps) {
   return (
     <>
       <div className="row">
-        <span className="col-6 text-truncate fw-medium fs-12">
+        <span className="col-6 col-md-auto me-md-3 text-truncate fs-md-15 fw-medium fs-12">
           <div className="d-flex align-items-center justify-content-start">
-            <WorkOutline height="1rem" width="1rem" />
+            <WorkOutline height="1.5em" width="1.5em" />
             <span className="col text-truncate">&nbsp; {company}</span>
           </div>
         </span>
-        <span className="col-6 text-truncate medium fs-12 d-flex align-items-center">
+        <span className="col-6 col-md-auto me-md-3 text-truncate fw-medium fs-md-15 fs-12 d-flex align-items-center">
           <div className="d-flex align-items-center justify-content-start">
-            <Location height="1rem" width="1rem" />
+            <Location height="1.5em" width="1.5em" />
             <span className="col text-truncate">&nbsp; {location}</span>
           </div>
         </span>

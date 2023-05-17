@@ -1,51 +1,26 @@
 import "bootstrap/dist/js/bootstrap.min.js";
 import "./App.scss";
+
 import { ReactComponent as Pencil } from "./assets/icons/pencil.svg";
 import BodySection from "./components/BodySection/BodySection";
 import HeaderSection from "./components/HeaderSection/HeaderSection";
-import Modal from "./components/Modal/Modal";
+import LoginModal from "./components/LoginModal/LoginModal";
+import RegisterModal from "./components/RegisterModal/RegisterModal";
 
 function App() {
   return (
-    <div className="container-fluid p-0 min-vh-100 bg-gray-200">
+    <div className="container-fluid p-0 min-vh-100 bg-gray-200 bg-md-white pb-5">
       <HeaderSection />
       <BodySection />
       <button
-        className="fab btn rounded-circle position-fixed"
+        className="fab btn rounded-circle position-fixed d-md-none"
         data-bs-toggle="modal"
-        data-bs-target="#modal"
+        data-bs-target="#login"
       >
         <Pencil height={24} width={24} fill="#fff" />
       </button>
-      <Modal title="Create Account">
-        <div className="input-group w-100 rounded-top">
-          <input
-            type="text"
-            className="form-control fs-13 bg-gray-100 fw-medium"
-            placeholder="First Name"
-          />
-          <input
-            type="text"
-            className="form-control fs-13 bg-gray-100 fw-medium "
-            placeholder="Last Name"
-          />
-        </div>
-        <input
-          type="text"
-          className="form-control fs-13 bg-gray-100 fw-medium rounded-0"
-          placeholder="Email"
-        />
-        <input
-          type="text"
-          className="form-control fs-13 bg-gray-100 fw-medium"
-          placeholder="Password"
-        />
-        <input
-          type="text"
-          className="form-control fs-13 bg-gray-100 fw-medium"
-          placeholder="Confirm Password"
-        />
-      </Modal>
+      <RegisterModal />
+      <LoginModal />
     </div>
   );
 }

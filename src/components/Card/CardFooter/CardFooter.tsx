@@ -9,15 +9,15 @@ function CardFooter() {
         className="rounded-circle avatar p-0 col-2"
         alt="Profile image"
       />
-      <div className="col">
-        <span className="row mx-1 fs-13 fw-semibold">Sarah West</span>
-        <span className="row mx-1 fs-12 fw-medium text-gray-800">
+      <div className="col d-md-flex justify-content-md-between align-items-md-center">
+        <span className="row  mx-1 fs-13 fs-md-18 fw-semibold">Sarah West</span>
+        <span className="row mx-1 fs-12 fw-medium text-gray-800 fs-md-14 fw-md-medium ">
           4.8k Views
         </span>
       </div>
-      <button className="btn btn-secondary btn-sm fs-12 col-auto">
+      <button className="btn btn-secondary btn-sm fs-12 col-auto my-2">
         <ShareFill className="me-1" height="1.5em" width="1.5em" />
-        Share
+        <span className="d-md-none">Share</span>
       </button>
     </div>
   );

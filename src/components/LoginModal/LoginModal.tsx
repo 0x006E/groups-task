@@ -1,0 +1,56 @@
+import { ReactComponent as Eye } from "../../assets/icons/eye.svg";
+import { ReactComponent as FB } from "../../assets/icons/fb.svg";
+import { ReactComponent as Google } from "../../assets/icons/google.svg";
+import Modal from "../Modal/Modal";
+
+function LoginModal() {
+  return (
+    <Modal title="Welcome back!" id="login">
+      <input
+        type="text"
+        className="form-control fs-13 bg-gray-100 fw-medium rounded-top rounded-0 border-bottom-0 py-2"
+        placeholder="Email"
+      />
+      <div className="input-group w-100 overflow-hidden rounded-bottom  ">
+        <input
+          type="password"
+          className="form-control fs-13 bg-gray-100 fw-medium   border-end-0 py-2 rounded-0"
+          style={{ borderBottomRightRadius: 0 }}
+          placeholder="Password"
+        />
+        <span className="bg-gray-100 border-1 border d-flex border-start-0 align-items-center rounded-bottom">
+          <Eye className="me-2" />
+        </span>
+      </div>
+      <div className="row justify-content-between px-3 mt-4">
+        <button className="btn btn-primary btn-lg rounded-pill col-5 fs-13 fw-semibold">
+          Sign In
+        </button>
+        <button
+          className="btn btn-text text-dark fw-medium col-auto fs-13 text-decoration-underline fw-medium "
+          data-bs-toggle="modal"
+          data-bs-target="#register"
+        >
+          Or, Create Account
+        </button>
+      </div>
+      <div className="row justify-content-center px-3 mt-4">
+        <button className="fs-13 text-black btn border-gray-400 btn-lg mb-2 rounded-3 d-flex gap-2 justify-content-center align-items-center">
+          <FB />
+          &nbsp;Sign in with Facebook
+        </button>
+        <button className="fs-13 text-black btn border-gray-400 btn-lg rounded-3 d-flex gap-2 justify-content-center align-items-center">
+          <Google />
+          &nbsp;Sign in with Google
+        </button>
+      </div>
+      <div className="mt-3 text-center row">
+        <span className="col-3" />
+        <button className="btn fs-11 col-6 fw-medium">Forgot password?</button>
+        <span className="col-3" />
+      </div>
+    </Modal>
+  );
+}
+
+export default LoginModal;
