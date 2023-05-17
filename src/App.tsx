@@ -9,7 +9,7 @@ import RegisterModal from "./components/RegisterModal/RegisterModal";
 
 function App() {
   return (
-    <div className="container-fluid p-0 min-vh-100 bg-gray-200 bg-md-white pb-5">
+    <div className="root container-fluid p-0 min-vh-100 bg-gray-200 bg-md-white pb-5">
       <HeaderSection />
       <BodySection />
       <button
