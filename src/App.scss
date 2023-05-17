@@ -197,7 +197,7 @@ $dropdown-min-width: 1rem;
 @import "~bootstrap/scss/bootstrap";
 
 .root {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 .fab {
   aspect-ratio: 1;
